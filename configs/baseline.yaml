@@ -1,0 +1,29 @@
+# Baseline 配置 — 风机 189 类小样本故障诊断
+
+data:
+  raw_dir: "data"                    # train/test/val 父目录
+  processed_dir: "data/processed"    # 预处理输出目录
+  window_size: 1024                  # 数据已是 1024 长度
+  window_step: 1024                  # 不重叠
+
+training:
+  cnn:
+    batch_size: 64
+    epochs: 50
+    lr: 0.001
+  fewshot:
+    episodes: 3000
+    val_episodes: 200
+    ways: 5                          # 每 episode 抽 5 个类别
+    shot: 5
+    query: 5
+    lr: 0.0001
+
+model:
+  cnn:
+    channels_per_class: 20            # 每类 20 个样本
+  encoder_dim: 64
+
+paths:
+  output_dir: "outputs"
+  data_info: "data/dataset_info.json"

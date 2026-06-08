@@ -1,0 +1,29 @@
+# 数据集（不上传 GitHub，避免版权问题）
+data/
+
+# 输出文件（模型权重不上传，图片上传用于 README 展示）
+outputs/**
+!outputs/**/
+!outputs/**/*.png
+
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+*.pth
+
+# 环境
+.venv/
+venv/
+conda_env/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 系统
+.DS_Store
+Thumbs.db
